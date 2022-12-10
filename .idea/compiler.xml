@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="base-jdbc" />
+        <module name="base-design-mode" />
+        <module name="base-cache" />
+        <module name="base-01" />
+        <module name="base-libother" />
+        <module name="base-thread" />
+        <module name="base-dynamic-agent" />
+        <module name="base-source-analysis" />
+        <module name="base-druid" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

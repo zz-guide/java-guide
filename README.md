@@ -1,21 +1,21 @@
 # java-guide
+
 java学习
 
 #1.java知识点
 
 - [x] 基本数据类型
-
 - [x] 类，接口，方法重载
 - [x] 泛型（类，方法，属性）
 - [x] I/O
-- [x] 反射和注解
+- [x] 反射,注解
 - [x] 动态代理 Proxy,cglib,ASM
-- [x] 集合
+- [x] 集合,list,map,set等
 - [x] 多线程（thread）ThreadLocal,ExcutorService,ThreadPool,ArrayQueueBlock
 - [x] ASQ并发编程(lock,atomic,synchronized)
 - [x] 网络编程(tcp,udp,netty等)
-- [x] java web（Servlet）
 - [x] jdbc数据库（druid,c3p0）
+- [x] java web（Servlet）
 - [x] JPA
 - [x] Mybatis
 - [x] Hibernate
@@ -42,3 +42,9 @@ java学习
 6.GC原理
 
 7.调优
+
+# 清理本地maven包
+
+    mvn clean -U
+    mvn dependency:purge-local-repository 
+    mvn dependency:purge-local-repository -DactTransitively=false -DreResolve=false

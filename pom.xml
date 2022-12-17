@@ -5,27 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xulei</groupId>
-    <artifactId>myJavaBase</artifactId>
+    <artifactId>java-guide</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>base-01</module>
-        <module>base-jdbc</module>
-        <module>base-druid</module>
-        <module>base-thread</module>
+        <module>base-foundation</module>
         <module>base-cache</module>
-        <module>base-dynamic-agent</module>
-        <module>base-libother</module>
-        <module>base-design-mode</module>
+        <module>base-designmode</module>
         <module>base-source-analysis</module>
+        <module>base-db</module>
     </modules>
 
     <dependencies>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.28</version>
-        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

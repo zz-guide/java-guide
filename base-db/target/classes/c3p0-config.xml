@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+    <!--testC3p0为配置名称，等会需要引用-->
+    <named-config name="myC3p0">
+        <!--配置用户名和密码url等信息-->
+        <property name="user">root</property>
+        <property name="password">xl123456?</property>
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://47.105.50.31:3306/myboot?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;characterEncoding=UTF-8</property>
+        <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+        <property name="acquireIncrement">5</property>
+        <!--初始缓冲池大小，最小和最大连接数量-->
+        <property name="initialPoolSize">20</property>
+        <property name="minPoolSize">2</property>
+        <property name="maxPoolSize">40</property>
+    </named-config>
+</c3p0-config>

@@ -9,7 +9,7 @@ import java.util.Date;
  * 参考官方文档：https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-statements.html
  */
 public class Curd {
-    static Connection conn = JDBCUtil.getConnection();
+    static Connection conn = MyJDBCUtil.getConnection();
 
     public static void insert() {
         String name = "单店校区";
@@ -34,7 +34,7 @@ public class Curd {
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         } finally {
-            JDBCUtil.close(pStmt, conn);
+            MyJDBCUtil.close(pStmt, conn);
         }
     }
 
@@ -71,7 +71,7 @@ public class Curd {
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         } finally {
-            JDBCUtil.close(pStmt, conn);
+            MyJDBCUtil.close(pStmt, conn);
         }
     }
 
@@ -104,7 +104,7 @@ public class Curd {
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         } finally {
-            JDBCUtil.close(pStmt, conn, resultSet);
+            MyJDBCUtil.close(pStmt, conn, resultSet);
         }
     }
 
@@ -131,7 +131,7 @@ public class Curd {
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         } finally {
-            JDBCUtil.close(pStmt, conn);
+            MyJDBCUtil.close(pStmt, conn);
         }
     }
 
@@ -156,7 +156,7 @@ public class Curd {
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
         } finally {
-            JDBCUtil.close(pStmt, conn);
+            MyJDBCUtil.close(pStmt, conn);
         }
     }
 
@@ -209,7 +209,7 @@ public class Curd {
             }
             e.printStackTrace();
         } finally {
-            JDBCUtil.close(pStmt, conn);
+            MyJDBCUtil.close(pStmt, conn);
         }
     }
 

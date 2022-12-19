@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 //        Curd.insert();
 //        Curd.batchInsert();
-//        Curd.query();
+        Curd.query();
 //        Curd.update();
 //        Curd.delete();
 //        Curd.transaction();

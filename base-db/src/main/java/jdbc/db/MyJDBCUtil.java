@@ -1,14 +1,13 @@
 package jdbc.db;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
 /**
  * 自己封装的jdbc工具类
  */
-public class JDBCUtil {
+public class MyJDBCUtil {
     private static String user;
     private static String password;
     private static String url;
@@ -17,12 +16,13 @@ public class JDBCUtil {
     static {
         try {
             Properties properties = new Properties();
-            properties.load(new FileInputStream("db.properties"));
+            InputStream inputStream = MyJDBCUtil.class.getResourceAsStream("/db.properties");
+            properties.load(inputStream);
             user = properties.getProperty("user");
             password = properties.getProperty("password");
             url = properties.getProperty("url");
             driver = properties.getProperty("driver");
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -67,7 +67,6 @@ public class JDBCUtil {
         }
     }
 
-    
     public static void close(Statement statement, Connection connection) {
         close(statement, connection, null);
     }
@@ -102,6 +101,4 @@ public class JDBCUtil {
 
         return false;
     }
-
-
 }

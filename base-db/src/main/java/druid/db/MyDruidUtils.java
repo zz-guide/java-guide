@@ -1,24 +1,24 @@
-package dbutils.db;
+package druid.db;
 
 import dbutils.pojo.Store;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
-import org.apache.commons.dbutils.handlers.MapHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Arrays;
-import java.util.Map;
 
 /**
  * 参考网站：https://www.cnblogs.com/xy-ouyang/p/16195001.html
  * https://blog.csdn.net/lianghecai52171314/article/details/102995870
  */
-public class MyDbUtils {
-    static Connection conn = JDBCUtil.getConnection();
+public class MyDruidUtils {
+    static DataSource dataSource = JDBCUtil.getDataSource();
 
     public static void query() {
+        Connection conn = null;
         /**
          * MapHandler：单行处理器！把结果集转换成Map<String,Object>，其中列名为键！
          * BeanHandler：单行处理器！把结果集转换成Bean，该处理器需要Class参数，即Bean的类型；
@@ -29,12 +29,13 @@ public class MyDbUtils {
          *
          */
         String sql = "select * from store where id=?";
-        QueryRunner qr = new QueryRunner();
+        QueryRunner qr = new QueryRunner(dataSource);
         // 把一行记录转换成一个Map，其中键为列名称，值为列值
         try {
+            conn = dataSource.getConnection();
 //            Map<String, Object> map = qr.query(conn, sql, new MapHandler(), 82);
 //            System.out.println("查询成功:" + map);
-            Store store = qr.query(conn, sql, new BeanHandler<>(Store.class), 82);
+            Store store = qr.query(sql, new BeanHandler<>(Store.class), 82);
             System.out.println(store.toString());
         } catch (SQLException e) {
             e.printStackTrace();
@@ -44,11 +45,13 @@ public class MyDbUtils {
     }
 
     public static void count() {
+        Connection conn = null;
         String sql = "select count(*),name from store";
-        QueryRunner qr = new QueryRunner();
+        QueryRunner qr = new QueryRunner(dataSource);
         try {
+            conn = dataSource.getConnection();
             // ScalarHandler 主要用于聚合函数
-            Number num = qr.query(conn, sql, new ScalarHandler<Number>());
+            Number num = qr.query(sql, new ScalarHandler<Number>());
             System.out.println(num);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -58,15 +61,17 @@ public class MyDbUtils {
     }
 
     public static void batchInsert() {
+        Connection conn = null;
         String sql = "insert into store(name) values(?)";
         Object[][] params = new Object[10][];//表示 要插入10行记录
         for (int i = 0; i < params.length; i++) {
             params[i] = new Object[]{"河北校区" + i,};
         }
 
-        QueryRunner qr = new QueryRunner();
+        QueryRunner qr = new QueryRunner(dataSource);
         try {
-            int[] res = qr.batch(conn, sql, params);
+            conn = dataSource.getConnection();
+            int[] res = qr.batch(sql, params);
             System.out.println(Arrays.toString(res));
         } catch (SQLException e) {
             e.printStackTrace();
@@ -76,9 +81,11 @@ public class MyDbUtils {
     }
 
     public static void cud() {
+        Connection conn = null;
         // 统一的增删改方法
-        QueryRunner qr = new QueryRunner();
+        QueryRunner qr = new QueryRunner(dataSource);
         try {
+            conn = dataSource.getConnection();
 //            String sql1 = "insert into store(name) values(?)";
 //            int res1 = qr.update(conn, sql1, "哈哈校区");
 //            System.out.println(res1);
@@ -88,7 +95,7 @@ public class MyDbUtils {
 //            System.out.println(res2);
 //
             String sql3 = "delete from store where id = ?";
-            int res3 = qr.update(conn, sql3, 83);
+            int res3 = qr.update(sql3, 83);
             System.out.println(res3);
         } catch (SQLException e) {
             e.printStackTrace();

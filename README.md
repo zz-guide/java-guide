@@ -48,3 +48,10 @@ java学习
     mvn clean -U
     mvn dependency:purge-local-repository 
     mvn dependency:purge-local-repository -DactTransitively=false -DreResolve=false
+
+# 问题
+
+# 1.查询数据为datetime类型的数据时，发现该字段的值为‘0000-00-00 00:00:00’，抛Zero date value prohibited 异常
+
+    Zero date value prohibited Query:
+    url添加?zeroDateTimeBehavior=CONVERT_TO_NULL

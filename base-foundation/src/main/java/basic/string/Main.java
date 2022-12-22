@@ -10,7 +10,8 @@ package basic.string;
 public class Main {
     public static void main(String[] args) {
 //        createString();
-        testEmpty();
+//        testEmpty();
+        t1();
     }
 
     public static void createString() {
@@ -99,5 +100,28 @@ public class Main {
         // native方法 intern作用：如果字符串常量池中已经包含了一个等于此String对象的字符串，
         // 则返回代表池中的这个字符串额String对象的引用；否则，会将此String对象的包含的字符串添加到常量池当中，
         // 并且返回此String对象的引用。
+    }
+
+    public static void t1() {
+//        String str; // Variable 'str' might not have been initialized
+        String str1 = null;
+        String str2 = "";
+        String str3 = "";
+//        System.out.println(str);
+        System.out.println(str1);
+        System.out.println(str2);
+        System.out.println(str3);
+        System.out.println(str2 == str3);
+        System.out.println(str1 == str3);
+
+        class S {
+            public String name; // 默认就是null
+            public String name1 = null;
+            public String name2 = "";
+        }
+        S s = new S();
+        System.out.println(s.name);
+        System.out.println(s.name1);
+        System.out.println(s.name2);
     }
 }

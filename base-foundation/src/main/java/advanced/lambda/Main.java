@@ -1,6 +1,10 @@
 package advanced.lambda;
 
 public class Main {
+    public static void main(String[] args) {
+
+    }
+
     interface MathOperation {
         int operation(int a, int b);
     }
@@ -13,8 +17,8 @@ public class Main {
         return mathOperation.operation(a, b);
     }
 
-    public static void main(String[] args) {
 
+    public static void t1() {
         Main tester = new Main();
         // 类型声明
         MathOperation addition = (int a, int b) -> a + b;
@@ -38,5 +42,9 @@ public class Main {
                 System.out.println("Hello " + message);
         greetService1.sayMessage("Runoob");
         greetService2.sayMessage("Google");
+    }
+
+    public static void t2() {
+
     }
 }

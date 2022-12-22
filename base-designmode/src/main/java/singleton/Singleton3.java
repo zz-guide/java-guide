@@ -1,7 +1,8 @@
 package singleton;
 
 /**
- * 单例模式的懒汉式[线程不安全，不可用]
+ * 单例模式的懒汉式
+ * 缺点: 线程不安全，不可用
  */
 public class Singleton3 {
     private static Singleton3 instance = null;

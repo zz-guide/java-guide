@@ -14,17 +14,17 @@ public class DoOnce {
     public static void Do() {
         /*if atomic.LoadUint32(&o.done) == 0 {
             // Outlined slow-path to allow inlining of the fast-path.
-            o.doSlow(f)
+            o.doSlow(file)
         }*/
     }
 
 
-    /* func (o *Once) doSlow(f func()) {
+    /* func (o *Once) doSlow(file func()) {
          o.m.Lock()
          defer o.m.Unlock()
          if o.done == 0 {
              defer atomic.StoreUint32(&o.done, 1)
-             f()
+             file()
          }
      }
 

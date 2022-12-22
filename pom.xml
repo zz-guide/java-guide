@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>base-foundation</module>
-        <module>base-cache</module>
+        <module>base-library</module>
         <module>base-designmode</module>
         <module>base-source-analysis</module>
         <module>base-db</module>

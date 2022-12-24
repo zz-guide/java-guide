@@ -26,6 +26,9 @@
         </environment>
     </environments>
     <mappers>
+        <!--        xml配置类-->
         <mapper resource="mybatis/mapper/UserMapper.xml"/>
+        <!--        注解类-->
+        <mapper class="mybatis.mapper.UserMapperAnnotation"/>
     </mappers>
 </configuration>

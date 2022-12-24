@@ -74,7 +74,21 @@
     </insert>
 
     <update id="update">
-        update user set name=#{name} where id = #{id};
+        update user
+        <!--       以下两种方式等价-->
+        <!--        <trim prefix="set" suffixOverrides=","><trim/>-->
+        <set>
+            <if test="name != null and name !=''">
+                name=#{name},
+            </if>
+            <if test="age != 0">
+                age=#{age},
+            </if>
+            <if test="classes_id != 0">
+                type=#{type},
+            </if>
+        </set>
+        where id = #{id};
     </update>
     <delete id="deleteById">
         delete from user where id = #{id};

@@ -29,3 +29,9 @@
     3.缺点就是有很多硬编码的地方，比如namespace,id等
 
 # mapper代理类（注解）
+
+1.maven 官方仓库：https://search.maven.org/
+2.mybatis笔记：https://www.kuangstudy.com/zl/ssm#1377533013419716610
+3.springboot官网：https://docs.spring.io/spring-boot/docs/
+4.mybatis3官方文档：https://mybatis.org/mybatis-3/zh/configuration.html
+

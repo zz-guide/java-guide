@@ -1,54 +1,28 @@
 package mybatis;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import mybatis.mapper.UserMapperAnnotation;
 
 import mybatis.mapper.UserMapper;
 import mybatis.pojo.User;
+import mybatis.util.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
 
 public class MybatisCURD {
-    static SqlSessionFactory sqlSessionFactory;
-    static SqlSession session;
-
-    static {
-        initSqlSession();
-    }
 
     public static void main(String[] args) {
 //        useXml();
-        useProxyMapper();
-        close();
-    }
-
-    private static void close() {
-        session.close();
-    }
-
-    private static void initSqlSession() {
-        String resource = "mybatis-config.xml";
-        InputStream inputStream;
-        try {
-            inputStream = Resources.getResourceAsStream(resource);
-            sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-            session = sqlSessionFactory.openSession();
-            System.out.println("连接成功");
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(0);
-        }
+//        useProxyMapper();
+        useAnnotation();
     }
 
 
     public static void useXml() {
+        SqlSession session = MybatisUtils.getSession();
 //        User user = new User();
 //        user.setAge(123);
 
@@ -58,6 +32,7 @@ public class MybatisCURD {
     }
 
     public static void useProxyMapper() {
+        SqlSession session = MybatisUtils.getSession();
         // 使用mapper代理，防止使用selectList硬编码
         UserMapper mapper = session.getMapper(UserMapper.class);
 
@@ -107,5 +82,12 @@ public class MybatisCURD {
         int affectRows = mapper.update(user);
         session.commit();
         System.out.println("affectRows=" + affectRows);
+    }
+
+    public static void useAnnotation() {
+        SqlSession session = MybatisUtils.getSession();
+        UserMapperAnnotation mapper = session.getMapper(UserMapperAnnotation.class);
+        List<User> users = mapper.getAll();
+        System.out.println(Arrays.toString(users.toArray()));
     }
 }

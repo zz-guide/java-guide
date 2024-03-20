@@ -19,11 +19,9 @@ java基础
 # database
 数据库操作，常规mysql,mybatis,hibernate等
 
-- [x] jdbc数据库（druid,c3p0）
-- [x] JPA
-- [x] Mybatis
-- [x] Hibernate
-
+- [x] jdbc操作数据库
+- [x] druid
+- [x] c3p0
 
 # design-pattern
 设计模式
@@ -32,11 +30,3 @@ java基础
 源码剖析，例如List,Map等
 
 - [x] JVM底层原理
-
-# WEB
-- [x] java web（Servlet）
-- [x] Spring(bean,注解)
-- [x] SpringMVC
-- [x] SpringBoot
-- [x] SpringCloud
-- [x] Dubbo

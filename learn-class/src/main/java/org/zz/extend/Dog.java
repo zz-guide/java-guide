@@ -1,4 +1,4 @@
-package basic.tclass.extend;
+package org.zz.extend;
 
 public class Dog extends Animal {
 }

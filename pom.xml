@@ -27,6 +27,9 @@
         <module>learn-reference</module>
         <module>learn-annotation</module>
         <module>learn-logging</module>
+        <module>learn-datatype</module>
+        <module>learn-feature</module>
+        <module>learn-class</module>
     </modules>
 
     <properties>

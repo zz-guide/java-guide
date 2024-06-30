@@ -1,4 +1,4 @@
-package basic.tclass.extend;
+package org.zz.extend;
 
 /**
  * 1.被final修饰的类不能继承

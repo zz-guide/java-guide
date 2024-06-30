@@ -1,4 +1,4 @@
-package basic.tclass;
+package org.zz;
 
 /**
  * java class

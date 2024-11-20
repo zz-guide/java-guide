@@ -1,11 +1,6 @@
-package org.zz;
+package org.zz.java.guide.generic;
 
-/**
- * java 泛型
- */
 public class Main {
     public static void main(String[] args) {
-
-        
     }
 }

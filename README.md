@@ -1,32 +1,17 @@
 # java-guide
 练习java
 
-# foundation
-java基础
+- [] 基本数据类型
+- [] 类，接口，方法重载
+- [] 泛型（类，方法，属性）,lambda
+- [] I/O
+- [] 反射,注解
+- [] 动态代理 Proxy,cglib,ASM
+- [] 集合,list,map,set等
+- [] localDatetime
+- [] 多线程（thread）ThreadLocal,ExcutorService,ThreadPool,ArrayQueueBlock
+- [] ASQ并发编程(lock,atomic,synchronized)
+- [] 网络编程(tcp,udp,netty等)
 
-- [x] 基本数据类型
-- [x] 类，接口，方法重载
-- [x] 泛型（类，方法，属性）,lambda
-- [x] I/O
-- [x] 反射,注解
-- [x] 动态代理 Proxy,cglib,ASM
-- [x] 集合,list,map,set等
-- [x] localDatetime
-- [x] 多线程（thread）ThreadLocal,ExcutorService,ThreadPool,ArrayQueueBlock
-- [x] ASQ并发编程(lock,atomic,synchronized)
-- [x] 网络编程(tcp,udp,netty等)
-
-# database
-数据库操作，常规mysql,mybatis,hibernate等
-
-- [x] jdbc操作数据库
-- [x] druid
-- [x] c3p0
-
-# design-pattern
-设计模式
-
-# sourcecode-analysis
-源码剖析，例如List,Map等
-
-- [x] JVM底层原理
+## roadmap
+- [x] 泛型（类，方法，属性）

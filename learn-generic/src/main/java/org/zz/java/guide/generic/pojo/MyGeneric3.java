@@ -6,8 +6,7 @@ package org.zz.java.guide.generic.pojo;
  */
 
 public class MyGeneric3<T> {
-    // todo: 这是错误的，不能使用泛型类中定义的类型参数
-    // 这个结论可能有点问题，jdk17是可以的
+    // 虽然与类上声明的参数类型都叫T,但本质上还是不一样
     public static <T> T show1(T one){
         return one;
     }

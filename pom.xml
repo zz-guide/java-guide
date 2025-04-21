@@ -12,6 +12,8 @@
 
     <modules>
         <module>base</module>
+        <module>learn-collection</module>
+        <module>learn-common</module>
         <module>learn-string</module>
         <module>learn-list</module>
         <module>learn-map</module>

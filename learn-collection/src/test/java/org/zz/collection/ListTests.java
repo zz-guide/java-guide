@@ -1,18 +1,12 @@
-package org.zz;
+package org.zz.collection;
 
-import java.util.ArrayList;
+import org.junit.jupiter.api.Test;
+import org.zz.common.entity.DemoUser;
 
-/**
- * ArrayList 动态数组
- */
+import java.util.*;
 
-
-public class Main {
-    public static void main(String[] args) {
-//        curd();
-        removeList();
-    }
-
+public class ListTests {
+    @Test
     public static void curd() {
         // 不能是基本类型，需要换成包装类型
         ArrayList<Integer> list1 = new ArrayList<>();

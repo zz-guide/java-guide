@@ -4,7 +4,6 @@ import java.util.*;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.zz.common.entity.DemoUser;
 
 public class MapTests {
 
@@ -104,10 +103,10 @@ public class MapTests {
 //        System.out.println(new String("s").hashCode());
 //        System.out.println(new String("s").hashCode());
 
-        HashMap<Object, Object> map = new HashMap<>();
-        map.put("1", new DemoUser());
-
-        // 从map中读取的时候需要调用hashCode,put的时候不需要
-        System.out.println(map.get("1"));
+//        HashMap<Object, Object> map = new HashMap<>();
+//        map.put("1", new DemoUser());
+//
+//        // 从map中读取的时候需要调用hashCode,put的时候不需要
+//        System.out.println(map.get("1"));
     }
 }

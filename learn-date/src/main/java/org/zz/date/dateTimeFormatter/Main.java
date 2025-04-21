@@ -1,4 +1,4 @@
-package org.zz.dateTimeFormatter;
+package org.zz.date.dateTimeFormatter;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;

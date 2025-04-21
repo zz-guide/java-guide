@@ -1,4 +1,4 @@
-package org.zz.simpledateformat;
+package org.zz.date.simpledateformat;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

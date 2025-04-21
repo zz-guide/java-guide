@@ -1,17 +1,9 @@
 package org.zz.date;
 
-import java.util.Date;
-
 public class Main {
     public static void main(String[] args) {
-        t1();
-    }
-
-    public static void t1() {
-        Date date = new Date();
-        System.out.println(date.getTime());
-
-        Date d = new Date(0L);
-        System.out.println(d.getTime());
+        // GMT 格林尼治（误差大，已废除）
+        // UTC 世界标准（铯原子震动频率）
+        // CST
     }
 }

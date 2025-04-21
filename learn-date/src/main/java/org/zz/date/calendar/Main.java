@@ -1,4 +1,4 @@
-package org.zz.calendar;
+package org.zz.date.calendar;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

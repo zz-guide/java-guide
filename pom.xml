@@ -15,8 +15,6 @@
         <module>learn-collection</module>
         <module>learn-common</module>
         <module>learn-string</module>
-        <module>learn-list</module>
-        <module>learn-map</module>
         <module>learn-array</module>
         <module>learn-date</module>
         <module>learn-generic</module>

@@ -1,10 +1,6 @@
-package org.zz.time;
+package org.zz.string;
 
 public class Main {
     public static void main(String[] args) {
-
-    }
-
-    public static void t1() {
     }
 }

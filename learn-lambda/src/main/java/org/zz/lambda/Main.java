@@ -1,4 +1,4 @@
-package org.zz;
+package org.zz.lambda;
 
 public class Main {
     public static void main(String[] args) {
